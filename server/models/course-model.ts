@@ -12,10 +12,10 @@ export interface ICourse extends Document {
   teacherShareRatio: number;
   adminShareRatio: number;
   status: {
-  type: String,
-  enum: ["upcoming", "completed"], 
-  default: "upcoming"
-},
+    type: String;
+    enum: ["upcoming", "completed"];
+    default: "upcoming";
+  };
   createdAt: Date;
   updatedAt: Date;
 }
@@ -63,7 +63,7 @@ const courseSchema = new Schema<ICourse>(
       min: 0,
       max: 100,
     },
-     status: {
+    status: {
       type: String,
       enum: ["upcoming", "completed"],
       default: "upcoming",
