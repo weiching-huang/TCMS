@@ -42,7 +42,7 @@ const AddAnnounce = () => {
       });
   };
   return (
-    <div className="flex justify-center items-center h-[85vh] xl:h-[100%] w-[100%]">
+    <div className="flex justify-center items-center h-[85vh] xl:h-[100%] w-[100%] min-h-[85vh] h-auto lg:h-[100%]">
       <div
         className="xl:h-[100%] w-[80%] 
            bg-stone-100 h-[90%] rounded-xl shadow-lg p-5 flex flex-col justify-between"
@@ -53,7 +53,7 @@ const AddAnnounce = () => {
         <div className="ml-2 h-[90%] bg-stone-300 p-5 rounded-xl">
           <form
             onSubmit={handleSubmit}
-            className="ml-2 h-[90%] bg-stone-300 p-5 rounded-xl flex flex-col gap-3"
+            className="ml-2 bg-stone-300 p-5 rounded-xl flex flex-col gap-3"
           >
             <select
               value={courseId}
@@ -87,7 +87,7 @@ const AddAnnounce = () => {
               <textarea
                 value={content}
                 onChange={(e) => setContent(e.target.value)}
-                className="w-full h-[300px] p-2 rounded-md bg-stone-200 focus:outline-none focus:ring-2 focus:ring-indigo-400"
+                className="w-full h-[200px] lg:h-[300px] p-2 rounded-md bg-stone-200 focus:outline-none focus:ring-2 focus:ring-indigo-400"
                 placeholder="輸入公告內容"
               />
             </div>
