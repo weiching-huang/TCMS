@@ -14,6 +14,8 @@ dotenv.config();
 passportConfig(passport);
 
 const app = express();
+const PORT = process.env.PORT || 8080;
+const allowedOrigins = ['https://tcms-system-i90fuldek-weiching-huangs-projects.vercel.app', 'http://localhost:3000','http://localhost:5173'];
 
 const dbConnectString = process.env.DB_CONNECT;
 
@@ -29,7 +31,20 @@ mongoose.connect(dbConnectString).then(() =>{
 
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
-app.use(cors());
+app.use(cors({
+    origin: function (origin, callback) {
+      // 允許無來源 (例如移動應用或 curl 請求)
+      if (!origin) return callback(null, true); 
+      // 檢查來源是否在允許清單中
+      if (allowedOrigins.indexOf(origin) === -1) {
+        const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
+        return callback(new Error(msg), false);
+      }
+      return callback(null, true);
+    },
+    methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+    credentials: true,
+}));
 app.use(passport.initialize());
 app.use(cors());
 app.use("/auth",authRoute);
@@ -40,6 +55,6 @@ app.use("/payouts",payoutRoute);
 app.use("/announcement",annouceRoute);
 
 
-app.listen(8080, ()=>{
-    console.log("Server is running on port 8080.");
-})
+app.listen(PORT, () => {
+    console.log(`Server is running on port ${PORT}.`);
+});
