@@ -43,7 +43,7 @@ export default function TeacherCourses() {
         {from === "attendance" ? "點名系統 - 課程列表" : "我的課程"}
       </h1>
 
-      <div className="flex flex-col justify-between h-[92%]">
+      <div className="flex flex-col justify-between min-h-190">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {courses.map((course) => (
             <div

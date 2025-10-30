@@ -42,7 +42,7 @@ const AddAnnounce = () => {
       });
   };
   return (
-    <div className="flex justify-center items-center h-[85vh] xl:h-[100%] w-[100%] min-h-[85vh] h-auto lg:h-[100%]">
+    <div className="flex justify-center items-center h-[90vh] xl:h-[100%] w-[100%] min-h-[90vh] h-auto lg:h-[100%]">
       <div
         className="xl:h-[100%] w-[80%] 
            bg-stone-100 h-[90%] rounded-xl shadow-lg p-5 flex flex-col justify-between"

@@ -37,12 +37,12 @@ const Announcement = () => {
     <div className="flex justify-center items-center h-[85vh] lg:h-[100%]">
       <div
         className="lg:h-[100%] lg:w-[80%] 
-           bg-stone-100 min-w-xl h-[90%] rounded-xl shadow-lg p-5 flex flex-col justify-between"
+           bg-stone-100 min-w-xl h-[90%] rounded-xl shadow-lg p-5 flex flex-col justify-between "
       >
         <div className="mt-3 text-3xl font-bold ">
           {selectedAnnouncement.title}
         </div>
-        <div className="mt-4 rounded-xl text-xl bg-stone-300 h-[80%] p-5">
+        <div className="mt-4 rounded-xl text-xl bg-stone-300 h-[80%] p-5 min-h-130">
           {selectedAnnouncement.content}
         </div>
         <div className="mt-2 text-end text-md text-gray-500">
