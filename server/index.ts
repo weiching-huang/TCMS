@@ -16,9 +16,11 @@ passportConfig(passport);
 const app = express();
 const PORT = process.env.PORT || 8080;
 const allowedOrigins = [
-  "https://tcms-system-nlk21icuo-weiching-huangs-projects.vercel.app",
   "http://localhost:3000",
   "http://localhost:5173",
+  "https://tcms-system.vercel.app", 
+  "https://tcms-system-git-master-weiching-huangs-projects.vercel.app", 
+  "https://tcms-system-g68bdl6bp-weiching-huangs-projects.vercel.app", 
 ];
 
 const dbConnectString = process.env.DB_CONNECT;
